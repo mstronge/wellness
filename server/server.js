@@ -2,14 +2,14 @@
 // ============
 var express = require("express"),
     http = require("http"),
-    port = (process.env.PORT || 8001),
+    port = (process.env.PORT || 3000),
     server = module.exports = express();
 
 // SERVER CONFIGURATION
 // ====================
 server.configure(function () {
 
-    server.use(express["static"](__dirname + "/../public"));
+    server.use(express["static"](__dirname + "/../dist"));
 
     server.use(express.errorHandler({
 
@@ -29,5 +29,3 @@ server.configure(function () {
 
 // Start Node.js Server
 http.createServer(server).listen(port);
-
-console.log('Welcome to Marionette-Require-Boilerplate!\n\nPlease go to http://localhost:' + port + ' to start using Require.js and Marionette');

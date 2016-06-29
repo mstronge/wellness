@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "wellness.css",
+	"sources": [
+		"source/styles/main.scss"
+	],
+	"mappings": "AAAA,AAAA,IAAI,CAAC;EACD,OAAO,EAAE,IAAK;EACd,MAAM,EAAE,IAAK,GAEhB",
+	"names": []
+}
