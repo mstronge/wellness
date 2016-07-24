@@ -2,7 +2,7 @@ define([
     'App',
     'backbone',
     'marionette',
-    'hbs!modules/home/templates/tmpl--home'
+    'hbs!modules/base/templates/tmpl--loader'
 ],
 function (
     App,
@@ -11,8 +11,6 @@ function (
     template
 ) {
     return Backbone.View.extend({
-
-        className: 'home',
 
         template: template,
 
@@ -24,6 +22,5 @@ function (
             this.$el.html(this.template);
             return this;
         }
-
     });
 });

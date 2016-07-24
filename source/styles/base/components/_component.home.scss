@@ -1,0 +1,14 @@
+section {
+    min-height: 300px;
+    width: 100%;
+
+    &.matt-intro {
+
+        background-image: url(img/matt-1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right;
+        
+    }
+
+}

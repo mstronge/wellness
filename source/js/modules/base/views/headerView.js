@@ -8,18 +8,23 @@ function (
     App,
     Backbone, 
     Marionette,
-    headerView
+    template
 ) {
     return Backbone.View.extend({
 
-        template: headerTemplate,
+        tagName: 'header',
+
+        className: 'header',
+
+        template: template,
 
         initialize: function() {
             
         },
 
         render: function() {
-
+            this.$el.html(this.template);
+            return this;
         }
 
     });

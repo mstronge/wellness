@@ -9,7 +9,6 @@ require.config({
         "marionette":"libs/backbone.marionette",
         "handlebars":"libs/handlebars",
         "hbs":"libs/hbs",
-        "i18nprecompile":"libs/i18nprecompile",
         "json2":"libs/json2",
         "backbone.validateAll":"libs/plugins/Backbone.validateAll",
         "bootstrap":"libs/plugins/bootstrap",
@@ -35,8 +34,10 @@ require.config({
     },
     hbs: {
         templateExtension: "html",
-        helperDirectory: "templates/helpers/",
-        i18nDirectory: "templates/i18n/",
-        compileOptions: {}
+        helperDirectory: "modules/base/helpers/",
+        compileOptions: {},
+        config: {
+            disableI18n: true
+        }
     }
 });

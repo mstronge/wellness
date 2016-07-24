@@ -3,13 +3,19 @@ define([
     'backbone', 
     'marionette',
     'underscore',
-    'handlebars'
+    'handlebars',
+    'modules/base/views/HeaderView',
+    'modules/base/views/FooterView',
+    'modules/home/views/HomeView'
 ], function (
     $, 
     Backbone, 
     Marionette, 
     _, 
-    Handlebars
+    Handlebars,
+    HeaderView,
+    FooterView,
+    HomeView
 ) {
 
     var App = new Backbone.Marionette.Application();
@@ -20,9 +26,9 @@ define([
     }
 
     App.addRegions({
-        headerRegion: "js-region--header",
-        mainRegion: "js-region--main",
-        footerRegion: "js-region--footer"
+        headerRegion: ".js-region--header",
+        mainRegion: ".js-region--main",
+        footerRegion: ".js-region--footer"
     });
 
     App.addInitializer(function () {
@@ -30,6 +36,13 @@ define([
     });
 
     App.mobile = isMobile();
+
+    App.start = function() {
+        console.log('App was started ...')
+        App.headerRegion.show(new HeaderView());
+        App.footerRegion.show(new FooterView());
+        App.mainRegion.show(new HomeView());
+    };
 
     return App;
 

@@ -1,0 +1,21 @@
+.header {
+    padding: 2rem;
+    max-width: 1120px;
+    margin: auto;
+
+    nav {
+        ul,li {
+            list-style: none;
+        }
+
+        a {
+            color: $primary;
+            text-align: center;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase
+        }
+
+    }
+
+}

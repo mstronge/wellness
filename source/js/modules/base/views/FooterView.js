@@ -2,7 +2,7 @@ define([
     'App',
     'backbone',
     'marionette',
-    'hbs!modules/home/templates/tmpl--home'
+    'hbs!modules/base/templates/tmpl--footer'
 ],
 function (
     App,
@@ -12,7 +12,9 @@ function (
 ) {
     return Backbone.View.extend({
 
-        className: 'home',
+        tagName: 'footer',
+
+        className: 'footer',
 
         template: template,
 

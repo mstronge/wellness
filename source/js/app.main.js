@@ -1,7 +1,7 @@
 require([
     "App", 
-    "routers/AppRouter", 
-    "controllers/DesktopController", 
+    "app.router", 
+    "app.controller", 
     "jquery", 
     "backbone", 
     "marionette",
@@ -15,7 +15,7 @@ require([
 ) {
 
     App.appRouter = new AppRouter({
-        controller:new AppController()
+        controller: new AppController()
     });
 
     App.start();

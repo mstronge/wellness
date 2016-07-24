@@ -10,10 +10,19 @@ function (
 ) {
     return Backbone.Marionette.Controller.extend({
         
-        initialize:function (options) {
+        initialize: function (options) {
 
         },
-        index:function () {
+
+        index: function () {
+
+        },
+
+        members: function() {
+
+        },
+
+        login: function() {
 
         }
 

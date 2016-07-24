@@ -5,12 +5,12 @@ module.exports = function(grunt) {
         requirejs: {
             desktopJS: {
                 options: {
-                    baseUrl: "source/js/app",
+                    baseUrl: "source/js/",
                     wrap: true,
                     preserveLicenseComments: false,
                     optimize: "none",
-                    mainConfigFile: "source/js/app/config/config.js",
-                    include: ["init/DesktopInit"],
+                    mainConfigFile: "source/js/modules/config/config.js",
+                    include: ["app.main.js"],
                     out: "dist/wellness.min.js"
                 }
             }    
@@ -46,6 +46,11 @@ module.exports = function(grunt) {
                 files: [
                 {expand: true, flatten: true, src: ['source/js/libs/*.js'], dest: 'dist/libs'}
                 ]
+            },
+            img: {
+                files: [
+                {expand: true, flatten: true, src: ['source/img/*.*'], dest: 'dist/img'}
+                ]               
             }
         }       
     });
@@ -56,6 +61,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('watch', ['watch', 'jshint']);
-    grunt.registerTask('build', ['requirejs:desktopJS', 'sass', 'copy:html', 'copy:js']);
+    grunt.registerTask('build', ['requirejs:desktopJS', 'sass', 'copy:html', 'copy:js', 'copy:img']);
     grunt.registerTask('default', ['test', 'build']);
 };
