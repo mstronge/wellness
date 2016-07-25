@@ -51,6 +51,11 @@ module.exports = function(grunt) {
                 files: [
                 {expand: true, flatten: true, src: ['source/img/*.*'], dest: 'dist/img'}
                 ]               
+            },
+            fonts: {
+                files: [
+                {expand: true, flatten: true, src: ['source/fonts/*.*'], dest: 'dist/fonts'}
+                ]               
             }
         }       
     });
@@ -61,6 +66,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('watch', ['watch', 'jshint']);
-    grunt.registerTask('build', ['requirejs:desktopJS', 'sass', 'copy:html', 'copy:js', 'copy:img']);
+    grunt.registerTask('build', ['requirejs:desktopJS', 'sass', 'copy:html', 'copy:js', 'copy:img', 'copy:fonts']);
     grunt.registerTask('default', ['test', 'build']);
 };

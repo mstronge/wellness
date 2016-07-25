@@ -2,7 +2,7 @@ define([
     'App',
     'backbone',
     'marionette',
-    'hbs!modules/base/templates/tmpl--header'
+    'hbs!modules/base/templates/tmpl--login'
 ],
 function (
     App,
@@ -12,18 +12,21 @@ function (
 ) {
     return Backbone.View.extend({
 
-        tagName: 'header',
-
-        className: 'header',
+        className: 'login',
 
         events: {
-            'click .js-action--show-login': 'showLogin'
+            'click .js-action--close-login': 'toggleLogin'
+        },
+    
+        stateClasses: {
+            active: 'is-active'
         },
 
         template: template,
 
         initialize: function() {
             console.log(App);
+            this.listenTo(Backbone, 'show:login', this.toggleLogin);
         },
 
         render: function() {
@@ -31,9 +34,8 @@ function (
             return this;
         },
 
-        showLogin: function(event) {
-            event.preventDefault();
-            Backbone.trigger('show:login', this);
+        toggleLogin: function() {
+           this.$el.toggleClass(this.stateClasses.active)
         }
 
     });

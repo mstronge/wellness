@@ -17,7 +17,7 @@ function (
         template: template,
 
         initialize: function() {
-            
+            console.log(App);
         },
 
         render: function() {

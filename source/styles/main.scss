@@ -2,6 +2,7 @@
 
 @import "base/libs/normalize/import-now";
 @import "base/libs/reflex";
+@import "base/libs/icons/font-awesome";
 
 @import "base/tools/variables";
 
@@ -10,6 +11,7 @@
 @import "base/components/component.animations";
 @import "base/components/component.home";
 @import "base/components/component.footer";
+@import "base/components/component.login";
 
 body {
     font-family: 'Lato', sans-serif;    
@@ -19,7 +21,7 @@ body {
     top: 0;
     width:100%;
     height: 100%;
-    background: linear-gradient($secondary, $tertiary);
+    background: linear-gradient($secondary, $secondary-dark);
     position: fixed;
     z-index: 1000;
     display: flex;

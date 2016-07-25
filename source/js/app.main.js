@@ -2,16 +2,12 @@ require([
     "App", 
     "app.router", 
     "app.controller", 
-    "jquery", 
-    "backbone", 
-    "marionette",
-    "jqueryui", 
-    "bootstrap", 
-    "backbone.validateAll"
+    "backbone",
 ], function (
     App,
     AppRouter,
-    AppController
+    AppController,
+    Backbone
 ) {
 
     App.appRouter = new AppRouter({

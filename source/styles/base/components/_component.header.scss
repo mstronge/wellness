@@ -1,5 +1,4 @@
 .header {
-    padding: 2rem;
     max-width: 1120px;
     margin: auto;
 
@@ -9,11 +8,26 @@
         }
 
         a {
-            color: $primary;
+            color: $dark-grey;
+            padding: 2rem;
             text-align: center;
             font-weight: 700;
             text-decoration: none;
-            text-transform: uppercase
+            text-transform: uppercase;
+
+            .is-svg {
+                max-width: 30px;
+                transform: translateY(0);
+                transition: transform .4s ease-in-out, opacity .4s ease;
+            }
+
+            &:hover {
+                .is-svg {
+                    opacity: 0.5;
+                    transform: translateY(-5px);
+                }
+            }
+
         }
 
     }
