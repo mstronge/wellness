@@ -1,14 +1,139 @@
 section {
     min-height: 300px;
     width: 100%;
+    padding: 8rem 0;
 
     &.matt-intro {
 
         background-image: url(img/matt-1.jpg);
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: right;
+        padding: 2rem 0;
+        background-color: #36b6cf;
+
+        h1 {
+            color: white;
+            font-size: 2.2rem; 
+        }
+
+        h2 {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.67);
+        }
+
+        p {
+            font-size: 1.2rem;
+            font-weight: 100;
+            color: #FFF;
+        }
+
         
+    }
+
+    &.feature-list {
+        padding: 3rem 0;
+
+        h1 {
+            color: $tertiary;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .feature {
+            margin-bottom: 30px;
+            padding: 1rem;
+            background-color: #fcfcfc;
+            transition: all 0.2s ease-in-out;
+            border: 1px solid #FFF;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08), 0 0 40px rgba(66, 196, 221, 0) inset;
+            cursor: pointer;
+
+            &:before, &:after {
+                box-shadow: 0 0 20px rgba(66, 196, 221, 0.6);
+            }
+
+            &:hover {
+                margin-top: -5px;
+                margin-bottom: 35px;
+                background: #FFF;
+            }
+
+            &__title {
+                font-weight: 100;
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                color: $tertiary;
+            }
+
+            &__desc {
+                color: $grey;
+            }
+
+            &__icon {
+                float:left;
+                background: linear-gradient($tertiary, $tertiary-dark);
+                padding: 1rem;
+                border-radius: 100%;
+                margin: 1rem;
+            }
+
+            .is-svg {
+                max-width: 40px;
+            }
+        }
+
+    }
+
+}
+
+.programs {
+    padding: 4rem 0;
+
+    h2 {
+        color: $tertiary;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        font-size: 1.2rem;
+        padding: 1rem;
+        color: $grey;
+    }
+
+}
+
+.coaching {
+    padding: 4rem;
+    background-image: url(img/coaching-bg.jpg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-color: #c8bfba;
+    background-size: cover;
+
+    @media (max-width: 768px) {
+        background-position: right;
+    }	
+
+
+    h2 {
+        color: #332f2e;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    h3 {
+        color: #534d45;
+        font-size: 1.4rem;
+        text-align: center;
+    }    
+
+    p {
+        text-align: center;
+        font-size: 1.2rem;
+        padding: 1rem;
+        color: $grey;
     }
 
 }

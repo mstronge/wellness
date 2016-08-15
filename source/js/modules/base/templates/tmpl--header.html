@@ -1,27 +1,53 @@
-<nav>
+<nav class="row">
 <div class="grid grid--justify-center grid--align-center grid--bleed">
-    <div class="grid__col-4 grid--direction-row grid--align-content-space-around grid--justify-space-around">
-        <a href="#">
+    <div class="grid__col-4 grid--direction-row grid--align-content-space-around grid--justify-space-around hide-for-small hide-for-login">
+        <a data-scroll href="#">
             <img src="img/home.svg" class="is-svg" alt="">
             Home
         </a>
-        <a href="#">
+        <a data-scroll href="#programs">
             <img src="img/programs.svg" class="is-svg" alt="">
             Programs
         </a>
     </div>
-    <div class="grid__col-4">
-        <img src="img/logo-horz.svg" alt="">
+    <div class="grid__col-sm-4">
+        <img src="img/logo-horz.svg" class="logo" alt="">
     </div>
-    <div class="grid__col-4 grid--direction-row grid--align-content-space-around grid--justify-space-around">
-        <a href="#">
+    <div class="grid__col-4 grid--direction-row grid--align-content-space-around grid--justify-space-around hide-for-small hide-for-login">
+        <a data-scroll href="#coaching">
             <img src="img/coaching.svg" class="is-svg" alt="">
             Coaching
-        </a>
+        </a> 
         <a href="#" class="is-login js-action--show-login">
             <img src="img/login.svg" class="is-svg" alt=""> 
             Login
         </a>
     </div>
 </div>
+</nav>
+
+<nav class="mobile-nav hide-for-large hide-for-login">
+
+    <button class="btn-open js-action--mobile-nav"><i class="fa fa-bars" aria-hidden="true"></i></button>
+
+    <div class="menu js-mobile-menu">
+
+        <a data-scroll href="#">
+            Home
+        </a>
+
+        <a data-scroll href="#programs">
+            Programs
+        </a>
+
+        <a data-scroll href="#coaching">
+            Coaching
+        </a> 
+
+        <a href="#" class="is-login js-action--show-login">
+            Login
+        </a>
+
+    </div>
+
 </nav>

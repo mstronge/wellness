@@ -11,7 +11,7 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
     <link rel="stylesheet" href="wellness.css" />
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
-    <script src="https://use.fontawesome.com/c1dfaef378.js"></script>
+
 </head>
 <body>
 
@@ -20,31 +20,46 @@
   <h4>Loading...</h4>
 </div>
 
-<div class="app" data-role="page">
-
+<div class="app" data-role="page">  
+ 
     <div class="js-region--login" data-role="login"></div>
+    <div class="js-region--register" data-role="register"></div>
 
     <header class="js-region--header" data-role="header"></header>
 
     <div class="js-region--main" data-role="content"></div>
 
     <footer class="js-region--footer" data-role="footer"></footer>
-
+ 
 </div>
 
-<script>
-   var element = document.getElementsByClassName('init-loader');
-   window.addEventListener('load', function () {
-    for(var i = 0; i < element.length; i++)
-    {
-        element[i].classList.remove('is-loading');
-        console.log(element[i].className);
-    }
-   }, false);
-</script>
-
-<script src="libs/require.js" type="text/javascript"></script>
+<script src="js/libs/smooth-scroll.min.js" type="text/javascript"></script>
+<script src="js/libs/require.js" type="text/javascript"></script>
+<script src="js/libs/jquery.js" type="text/javascript"></script>
 <script src="wellness.min.js" type="text/javascript"></script>
+
+<script>
+
+   smoothScroll.init({
+       offset: 100,
+       updateURL: false
+   });
+
+   $(document).ready(function() {
+
+    var $element = $('.init-loader');
+
+    setTimeout( function() {
+            $element.removeClass('is-loading');
+    }, 1000);
+
+    setTimeout( function() {
+            $element.remove();
+    }, 2500);
+
+   });
+   
+</script>
 
 </body>
 </html>

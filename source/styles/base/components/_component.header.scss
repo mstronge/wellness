@@ -1,6 +1,62 @@
 .header {
-    max-width: 1120px;
     margin: auto;
+    min-height: 100px;
+
+    &.sticky {
+        position: fixed;
+        width:100%;
+        background-color: #FFF;
+        z-index: 1000;
+        height: 115px;
+        box-shadow: 0 0px 6px rgba(0,0,0,0.2);
+
+        @media (max-width: 768px) {
+            height: 100px;
+        }
+
+    }
+
+    &--members {
+        box-shadow: 0 0px 6px rgba(0,0,0,0.2);
+
+        &.sticky {
+            height: 100px;
+        }
+
+        .logo {
+            padding: 1rem;
+        }
+
+        nav {
+            ul,li {
+                list-style: none;
+            }
+
+            a {
+                color: $dark-grey;
+                padding: 2rem 1rem;
+                text-align: right !important;
+                font-weight: 700;
+                text-decoration: none;
+                text-transform: uppercase;
+
+                .is-svg {
+                    max-width: 30px;
+                    transform: translateY(0);
+                    transition: transform .4s ease-in-out, opacity .4s ease;
+                }
+
+                &:hover {
+                    .is-svg {
+                        opacity: 0.5;
+                        transform: translateY(-5px);
+                    }
+                }
+
+            }
+        }
+
+    }
 
     nav {
         ul,li {
@@ -9,7 +65,7 @@
 
         a {
             color: $dark-grey;
-            padding: 2rem;
+            padding: 2rem 1rem;
             text-align: center;
             font-weight: 700;
             text-decoration: none;
@@ -29,7 +85,66 @@
             }
 
         }
+        
+    &.mobile-nav {
 
+        .btn-open {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.5;
+            }
+
+        }
+
+        .menu {
+            background-color: #FFF;
+            position: absolute;
+            top: 100px;
+            width: 100%;
+            z-index: 49;
+            transform: translateY(-1000px);
+            transition: all .8s ease;
+            opacity: 0;
+
+            &.is-active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            a {
+                display: block;
+                padding: 1rem;
+                color: $grey;
+                border-bottom: 1px solid #dedede;
+            }
+
+        }
+        
+    }
+
+    }
+
+    .logo {
+        transition: margin-left 0.4s ease;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .logo {
+        padding: 1rem;
+        position: absolute;
+        left: 20px;
     }
 
 }

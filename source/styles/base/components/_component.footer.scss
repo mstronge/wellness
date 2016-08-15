@@ -1,4 +1,48 @@
 .footer {
     background: linear-gradient($secondary, $secondary-dark);
+    padding-bottom: 2rem;
+}
+
+.sub-footer {
+    background: rgba(141, 198, 63, 0.42);
     padding: 2rem 0;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.5);
+    flex-direction: row;
+
+    a {
+        color: #FFF;
+        padding: 0 2rem;
+        text-decoration: none;
+    }
+
+}
+
+.ssl {
+    background: #FFF;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    border-top: 1px solid #f6f6f6;
+    letter-spacing: 1px;
+
+    i {
+        color: $secondary;
+    }
+
+    strong {
+        font-weight: 700;
+    }
+
+}
+
+.credits {
+    max-width: 230px;
+
+    @media (max-width: 768px) {
+        margin: auto;
+    }
+
+    
 }

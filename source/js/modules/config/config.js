@@ -1,24 +1,21 @@
 require.config({
     baseUrl:"./js",
     paths:{
+        "App":"App",
         "jquery":"libs/jquery",
-        "jqueryui":"libs/jqueryui",
-        "jquerymobile":"libs/jquery.mobile",
+        "firebase":"libs/firebase",
         "underscore":"libs/lodash",
         "backbone":"libs/backbone",
+        "backbonefire":"libs/backbonefire",
         "marionette":"libs/backbone.marionette",
         "handlebars":"libs/handlebars",
         "hbs":"libs/hbs",
         "json2":"libs/json2",
-        "backbone.validateAll":"libs/plugins/Backbone.validateAll",
-        "bootstrap":"libs/plugins/bootstrap",
-        "text":"libs/plugins/text"
+        "eventBus":"modules/utils/eventBus",
+        "config":"modules/config/index",
     },
 
     shim:{
-        "bootstrap":["jquery"],
-        "jqueryui":["jquery"],
-        "jquerymobile":["jqueryui"],
         "backbone":{
             "deps":["underscore", "jquery"],
             "exports":"Backbone"
@@ -30,7 +27,10 @@ require.config({
         "handlebars":{
             "exports":"Handlebars"
         },
-        "backbone.validateAll":["backbone"]
+        "firebase":{
+            "deps":["jquery"],
+            "exports":"Firebase"
+        }
     },
     hbs: {
         templateExtension: "html",

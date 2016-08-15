@@ -1,0 +1,39 @@
+.btn {
+    outline: none;
+    padding: 1rem;
+    color: #FFF;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.4s ease;
+
+    &--primary {
+        background: $primary;
+    }
+
+    &--secondary {
+        background: $secondary;
+
+        &:hover {
+            background: linear-gradient($secondary-dark, $secondary-dark);            
+        }
+
+    }
+
+    &--tertiary {
+        background: linear-gradient($tertiary, $tertiary-dark);
+    }
+
+    &--radius {
+        border-radius: 10px;
+    }
+
+    &--inline {
+        max-width: 300px;
+    }
+
+
+
+}

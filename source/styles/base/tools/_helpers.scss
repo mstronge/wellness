@@ -1,0 +1,36 @@
+.text {
+
+    &--center {
+        text-align: center;
+
+    }
+
+    &--left {
+        text-align: left !important;
+    }
+
+    &--right {
+        text-align: right !important;
+    }
+
+    &-sm--center {
+        text-align: center !important;
+    }
+
+}
+
+.hide-for-large {
+    display: none;
+}
+
+@media (max-width: 768px) {
+  
+  .hide-for-small {
+      display: none;
+  }
+
+  .hide-for-large {
+      display: block;
+  }
+
+}

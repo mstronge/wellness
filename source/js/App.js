@@ -4,20 +4,18 @@ define([
     'marionette',
     'underscore',
     'handlebars',
-    'modules/base/views/HeaderView',
-    'modules/base/views/FooterView',
-    'modules/home/views/HomeView',
-    'modules/base/views/LoginView'
+    'firebase',
+    'config',
+    'eventBus'
 ], function (
     $, 
     Backbone, 
     Marionette, 
     _, 
     Handlebars,
-    HeaderView,
-    FooterView,
-    HomeView,
-    LoginView
+    Firebase,
+    config,
+    eventBus
 ) {
 
     var App = new Backbone.Marionette.Application();
@@ -31,23 +29,27 @@ define([
         headerRegion: ".js-region--header",
         mainRegion: ".js-region--main",
         footerRegion: ".js-region--footer",
-        loginRegion: ".js-region--login"
+        loginRegion: ".js-region--login",
+        registerRegion: ".js-region--register"
     });
 
     App.addInitializer(function () {
         Backbone.history.start();
-        App.EventBus = _.extend({}, Backbone.Events)        
+
+        App.Firebase = firebase.initializeApp(config.firebase);
+        App.FB = new firebase.auth.FacebookAuthProvider();
+        App.Database = firebase.database();
+
+        console.log(App.Database);
+        
+        App.eventBus = _.extend({}, Backbone.Events)        
     });
 
-    App.mobile = isMobile();
+    App.on('start', function() {
+        console.log('App was started');
+    });
 
-    App.start = function() {
-        console.log(App);
-        App.headerRegion.show(new HeaderView());
-        App.footerRegion.show(new FooterView());
-        App.mainRegion.show(new HomeView());
-        App.loginRegion.show(new LoginView());
-    };
+    config.isMobile = isMobile();
 
     return App;
 

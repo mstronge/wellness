@@ -2,13 +2,15 @@ define([
     'App',
     'backbone',
     'marionette',
-    'hbs!modules/base/templates/tmpl--login'
+    'hbs!modules/base/templates/tmpl--login',
+    'eventBus'
 ],
 function (
     App,
     Backbone, 
     Marionette,
-    template
+    template,
+    eventBus
 ) {
     return Backbone.View.extend({
 
@@ -25,8 +27,7 @@ function (
         template: template,
 
         initialize: function() {
-            console.log(App);
-            this.listenTo(Backbone, 'show:login', this.toggleLogin);
+            this.listenTo(eventBus, eventBus.eventKeys.TOGGLE_LOGIN_WINDOW, this.toggleLogin);
         },
 
         render: function() {
